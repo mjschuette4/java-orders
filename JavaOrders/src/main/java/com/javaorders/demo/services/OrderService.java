@@ -1,4 +1,7 @@
 package com.javaorders.demo.services;
 
-public interface OrderServices {
+import com.javaorders.demo.models.Orders;
+
+public interface OrderService {
+    Orders findOrdersById(long id);
 }

@@ -22,7 +22,7 @@ public class Agents {
 
     //OneToMany customers
     @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("agent")
+    @JsonIgnoreProperties(value = "agent")
     private List<Customers> customers = new ArrayList<>();
 
     public Agents() {

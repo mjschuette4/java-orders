@@ -13,14 +13,15 @@ public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
+    @Column(nullable = false)
     private long paymentid;
 
     @Column(nullable = false)
     private String type;
 
-    @ManyToMany
-    @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name = "paymentid"), inverseJoinColumns = @JoinColumn(name = "ordnum"))
-    List<Orders> orders = new ArrayList<>();
+//    @ManyToMany
+//    @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name = "paymentid"), inverseJoinColumns = @JoinColumn(name = "ordnum"))
+//    List<Orders> orders = new ArrayList<>();
 
     public Payments() {
     }

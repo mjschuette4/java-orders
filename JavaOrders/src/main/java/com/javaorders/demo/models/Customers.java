@@ -13,6 +13,7 @@ public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long custcode;
+
     private String custcity;
     private String custcountry;
     private String custname;
@@ -26,13 +27,13 @@ public class Customers {
 
     //ManyToOne agents
     @ManyToOne
-    @JoinColumn(name = "agentcode", nullable=false)
-    @JsonIgnoreProperties("customers")
+    @JoinColumn(name = "agentcode", nullable = false)
+    @JsonIgnoreProperties(value = "customers")
     private Agents agent;
 
     //OneToMany orders
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("customer")
+    @JsonIgnoreProperties(value = "customer")
     private List<Orders> orders = new ArrayList<>();
 
     public Customers() {

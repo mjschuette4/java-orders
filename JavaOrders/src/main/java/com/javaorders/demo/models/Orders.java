@@ -21,7 +21,7 @@ public class Orders {
 
     //ManyToOne customer
     @ManyToOne
-    @JoinColumn(name = "custcode")
+    @JoinColumn(name = "custcode", nullable = false)
     @JsonIgnoreProperties({"agent", "orders"})
     private Customers customer;
 
